@@ -1,0 +1,219 @@
+/* ------------------------------
+          M O D A L
+------------------------------ */
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(46, 47, 66, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms visibility (0.4, 0, 0.2, 1);
+}
+
+.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  position: relative;
+  padding: 40px;
+  border-radius: 15px;
+  background-color: #fafafa;
+  max-width: 517px;
+  height: 794px;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #111;
+  max-width: 298px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 40px;
+}
+
+.modal-title-span {
+  color: #fd9222;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.modal-clos-btn-icon {
+  stroke: #404040;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-clos-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 0;
+}
+
+.modal-clos-btn:hover .modal-clos-btn-icon,
+.modal-clos-btn:focus .modal-clos-btn-icon {
+  transform: scale(1.3);
+}
+
+.modal-wrap-label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.modal-input {
+  width: 437px;
+  height: 68px;
+  border-radius: 13px;
+  border: 1px solid rgba(64, 64, 64, 0.3);
+  box-sizing: border-box;
+  padding: 22px 0px 22px 64px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:hover,
+.modal-input:focus {
+  border-color: #fd9222;
+}
+
+.modal-input:hover + svg,
+.modal-input:focus + svg {
+  stroke: #fd9222;
+}
+
+.modal-lable {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.3);
+}
+
+.modal-area {
+  padding: 22px 24px;
+  resize: none;
+  border-radius: 13px;
+  border: 1px solid rgba(64, 64, 64, 0.3);
+  height: 137px;
+}
+
+.modal-area:hover,
+.modal-area:focus {
+  border-color: #fd9222;
+}
+
+.modal-wrap-check {
+  padding-bottom: 40px;
+}
+
+.modal-checkbox-link {
+  text-decoration: underline;
+  color: #fd9222;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.modal-checkbox-new {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  margin-right: 12px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-check {
+  display: none;
+}
+
+.modal-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-checkbox-wrap:hover,
+.modal-checkbox-wrap:focus {
+  transform: scale(1.03);
+}
+
+.modal-checkbox-text {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.6);
+  margin-right: 4px;
+}
+
+.modal-input-and-icon {
+  position: relative;
+}
+.modal-input-icon {
+  stroke: #404040;
+  fill: white;
+  position: absolute;
+  left: 24px;
+  top: 22px;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-new-icon {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5.25px;
+  fill: transparent;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-check:checked + .modal-checkbox-wrap > .modal-checkbox-new {
+  background-color: #fd9222;
+}
+
+.modal-check:checked + .modal-checkbox-wrap > .modal-checkbox-new > svg {
+  fill: #fafafa;
+}
+
+.modal-btn-send {
+  border-radius: 100px;
+  padding: 14px 40px;
+
+  background: #fd9222;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  display: block;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn-send:hover,
+.modal-btn-send:focus {
+  transform: scale(1.1);
+}
